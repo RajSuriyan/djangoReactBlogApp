@@ -1,6 +1,6 @@
 import {
   BrowserRouter,
-  Navigate, //khjk
+  Navigate,
   Route,
   Routes
 } from "react-router-dom"
