@@ -2,10 +2,10 @@ import { HttpStatusCode } from "axios";
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import api from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 
-
-function protected_route({children}){
+function ProtectedRoute({children}){
     const [isAuthorized,setAuthorized] = useState(null);
     useEffect(() => 
         {
@@ -58,4 +58,4 @@ function protected_route({children}){
 
 }
 
-export default protected_route;
+export default ProtectedRoute
