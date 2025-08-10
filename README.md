@@ -10,14 +10,14 @@ Users can **create**, **edit**, and **delete** their own blog posts.
 - ✏️ Edit existing posts
 - 🗑️ Delete posts
 - 📄 View all posts
-- 🔐 User authentication & authorization (optional)
+- 🔐 User authentication & authorization
 
 ---
 
 ## 🛠 Tech Stack
-**Frontend:** React, Axios, Tailwind CSS (optional)  
+**Frontend:** React, Axios,
 **Backend:** Django, Django REST Framework  
-**Database:** SQLite / PostgreSQL / MySQL (replace with what you use)  
+**Database:** SQLite
 
 ---
 
@@ -41,3 +41,6 @@ python manage.py migrate
 
 # Start backend server
 python manage.py runserver
+
+### For frontend install node modules and
+npm run dev
