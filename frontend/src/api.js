@@ -20,5 +20,12 @@ api.interceptors.request.use(
         return Promise.reject(error)
     }
 )
+api.interceptors.response.use(
+    (config) => {
+        console.log(config.status);
+        return config
+    }
+    
+)
 
 export default api;
