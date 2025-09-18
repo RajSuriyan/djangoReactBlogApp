@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import api from "../api";
 import Note from "../components/Note";
 import "../styles/Home.css";
@@ -22,7 +23,7 @@ function Home(){
     const deleteNote = (id) => {
         api.delete(`/api/notes/delete/${id}/`).then((res)=>{
             if(res.status===204){alert("Note Deleted");getNotes();}
-            else {alert("Failed to delete Note")}
+            else {toast.success("Failed to delete Note")}
         }).catch((err)=>{
             alert(err);
         })
@@ -31,9 +32,15 @@ function Home(){
     const createNote = (e)=>{
         e.preventDefault()
         api.post("/api/notes/",{content,title}).then((res)=>{
-            if (res.status===201) {alert("Note Created"); getNotes();}
-            else {alert("Failed to make note.")}
-        }).catch((err)=>{alert(err)})
+            if (res.status===201) {
+                setTitle("");
+                setContent("");                
+                toast.success("Note Created");
+                getNotes();
+
+            }
+            else {toast.success("Failed to make note.")}
+        }).catch((err)=>{toast.success(err)})
        
     }
     return <div>
