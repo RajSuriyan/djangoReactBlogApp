@@ -138,6 +138,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 CORS_ALLOWED_ORIGINS = [
+    "https://djangoreact-front.onrender.com",
     "https://my-frontend.onrender.com",
     "http://localhost:5173"
 ]
